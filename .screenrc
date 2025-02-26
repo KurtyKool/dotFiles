@@ -1,0 +1,33 @@
+# Stop screen from chucking a fit
+startup_message off
+vbell off
+altscreen on
+
+# New escape key
+escape ^Zz
+
+#Vim like bindings
+bind O only
+bind s eval "split" "focus" "screen" "focus prev"
+bind v eval "split -v" "focus" "screen" "focus prev"
+bind q remove
+
+bind h focus left
+bind j focus down
+bind k focus up
+bind l focus right
+bind < resize -h -1
+bind > resize -h +1
+bind + resize -v +1
+bind - resize -v -1
+
+#Add a resize mode (per stumpWM)
+bind r eval "command -c rsz"
+bind R eval "command -c rsz"
+bind -c rsz h eval "resize -h -1" "command -c rsz"
+bind -c rsz l eval "resize -h +1" "command -c rsz"
+bind -c rsz j eval "resize -v -1" "command -c rsz"
+bind -c rsz k eval "resize -v +1" "command -c rsz"
+
+#I forgot what the original key was for this
+bind e screen bash
